@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const Delete = styled.i`
-  display: inline-block;
-  z-index: 1;
+  display: none;
   &:before {
     content: "\f2f8";
   }

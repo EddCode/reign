@@ -6,23 +6,25 @@ services:
     image: mongo
     environment:
       MONGO_INITDB_DATABASE: "reign_challege"
-      MONGO_INITDB_ROOT_USERNAME: "root"
-      MONGO_INITDB_ROOT_PASSWORD: "reign"
     ports:
       - "27017-27019:27017-27019"
     volumes:
-      - nosqldata:/data/db
+      - mongodb:/data/db
   server:
     container_name: serverApi
     build:
       context: ./server
       dockerfile: Dockerfile
+    restart: always
     links: 
       - db
+    environment: 
+      - DB_URL=mongodb://reignstore/reign_challege
     ports:
       - "3000:3000"
     volumes:
       - ./server:/usr/src/app
+      - /urs/src/app/node_modules
   client:
     container_name: client
     build:
@@ -33,4 +35,4 @@ services:
     volumes:
       - ./client:/usr/src/app
 volumes:
-  nosqldata:
+  mongodb:

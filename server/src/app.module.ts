@@ -1,10 +1,14 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-
+import { MongooseModule } from '@nestjs/mongoose'
+import { ArticleModule } from './Articles/article.module'
+import { ApiModule } from './Algolia/api.module'
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    ArticleModule,
+    ApiModule,
+    MongooseModule.forRoot(process.env.DB_URL, { useNewUrlParser: true }),
+  ],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
