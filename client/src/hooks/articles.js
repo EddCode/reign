@@ -9,5 +9,8 @@ export const useArticles = () => {
     setArticles(result);
   }, []);
 
-  return [articles];
+  const removeArticle = (articleId) =>
+    articles.filter((article) => article._id !== articleId);
+
+  return [articles, setArticles, removeArticle];
 };

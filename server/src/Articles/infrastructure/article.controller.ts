@@ -5,9 +5,9 @@ import {
     HttpStatus, 
     Post, 
     Body, 
-    Query, 
     NotFoundException, 
-    Delete, 
+    Delete,
+    Param, 
 } from '@nestjs/common';
 import { ArticleService } from '../useCases/article.service';
 import { CreateArticleDTO } from '../domain/create-article.dto'
@@ -31,10 +31,10 @@ export class ArticleController {
       })
   }
 
-  @Delete()
-    async removeArticle(@Res() res, @Query('articleId') customerID: string) {
-        const article = await this.articleSercice.deleteArticle(customerID);
-        if (!article) throw new NotFoundException('Customer does not exist');
+  @Delete(":articleId")
+    async removeArticle(@Res() res, @Param('articleId') articleId: string) {
+        const article = await this.articleSercice.deleteArticle(articleId);
+        if (!article) throw new NotFoundException('Article not exists');
         return res.status(HttpStatus.OK).json({
             message: 'article has been deleted',
             article

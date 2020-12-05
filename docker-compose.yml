@@ -5,7 +5,7 @@ services:
     container_name: reignstore
     image: mongo
     environment:
-      MONGO_INITDB_DATABASE: "reign_challege"
+      MONGO_INITDB_DATABASE: "reign_challenge"
     ports:
       - "27017-27019:27017-27019"
     volumes:
@@ -19,7 +19,7 @@ services:
     links: 
       - db
     environment: 
-      - DB_URL=mongodb://reignstore/reign_challege
+      - DB_URL=mongodb://reignstore/reign_challenge
     ports:
       - "3000:3000"
     volumes:

@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const Delete = styled.i`
   display: none;
+  position: absolute;
+  left: 4rem;
   &:before {
     content: "\f2f8";
   }
@@ -18,7 +20,6 @@ const Article = styled.div`
 
   &:hover ${Delete} {
     display: inline-block;
-    margin-left: 1em;
   }
 `;
 
@@ -31,11 +32,20 @@ export const ArticleContainer = styled.div`
 
 export const ArticleContent = styled.p`
   font-size: ${(props) => props.theme.size};
+  position: relative;
 
   ${(props) => {
-    return props.variant == "author"
-      ? "color: #999"
-      : "margin-right: .4rem; color: #333";
+    switch (props.variant) {
+      case "author":
+        return "color: #999";
+        break;
+      case "title":
+        return "margin-right: .4rem;color: #333;";
+        break;
+      case "time":
+        return "color:#333;margin-right:2rem";
+        break;
+    }
   }}
 `;
 

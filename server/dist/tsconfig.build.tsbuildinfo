@@ -1597,13 +1597,13 @@
         "affectsGlobalScope": false
       },
       "../src/Articles/useCases/article.service.ts": {
-        "version": "80d99d24d0db71acdf5a8c07a218f55af40983271541328cd621affb10d5f3e8",
+        "version": "9d3fc35b02f55841dac0a32617c869512e19b5cf8e61060875c72c09fef3fb38",
         "signature": "da81d587c3c543f48006dfd9613e1f81b3b8a5cd20031e415d305448cf065876",
         "affectsGlobalScope": false
       },
       "../src/Articles/infrastructure/article.controller.ts": {
-        "version": "15c76b537594092f9a62d91a0a4e49bb8cf710bc9155ba03178e4e98b666d6b1",
-        "signature": "b16344a3195c53d53b9aad2002ca865ddc4402ed1c655e9443200f3a15fb3c86",
+        "version": "f5dc3277ec2d49c868baa2b63ffcd2dfe40b796f19004e65a21ca5ca61ff12db",
+        "signature": "339b4df7bdc9a3650598db3e27dbeb5d403a1d28a7c6ab149a6927f71156666d",
         "affectsGlobalScope": false
       },
       "../src/Articles/domain/articles.shcema.ts": {
